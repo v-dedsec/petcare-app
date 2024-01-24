@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+
+        <th>Fromtime</th>
+
+        <th>Totime</th>
+    </tr>
+    <tr>
+         {% for i in data %}
+              <td>{{ i.date }}</td>
+              <td>{{ i.fromtime }}</td>
+              <td>{{ i.totime }}</td>
+                <td><a href="/petcare/appoiment/{{ i.id }}"><button class="btn-success">Appoiment</button></a> </td>
+        {% endfor %}
+    </tr>
+
+
+
+</table>
+</body>
+</html>

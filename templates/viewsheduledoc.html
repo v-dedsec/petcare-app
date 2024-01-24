@@ -1,0 +1,38 @@
+{% extends "doc_index.html" %}
+{% block body %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+
+        <th>Fromtime</th>
+
+        <th>Totime</th>
+    </tr>
+    <tr>
+         {% for i in data %}
+              <td>{{ i.date }}</td>
+              <td>{{ i.fromtime }}</td>
+              <td>{{ i.totime }}</td>
+             <td><a href="/petcare/viewapp/"><button class="btn-success">View Appoiment</button> </a> </td>
+
+
+        {% endfor %}
+    </tr>
+
+
+
+</table>
+
+</body>
+</html>
+{% endblock %}

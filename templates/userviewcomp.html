@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+
+        <th>Status</th>
+
+        <th>Reply</th>
+
+        <th>Complaint</th>
+    </tr>
+
+     <tr>
+        {% for i in data %}
+              <td>{{ i.date }}</td>
+              <td>{{ i.status }}</td>
+              <td>{{ i.reply }}</td>
+              <td>{{ i.complaint }}</td>
+         {% endfor %}
+     </tr>
+
+<tr>
+
+</tr>
+
+
+
+</table>
+
+</body>
+</html>

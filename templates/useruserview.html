@@ -1,0 +1,60 @@
+{% extends "user_index.html" %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User view</title>
+</head>
+<body>
+
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+
+        <th>Gender</th>
+
+        <th>DOB</th>
+
+        <th>Email</th>
+
+        <th>Phone</th>
+
+         <th>Place</th>
+
+         <th>Pincode</th>
+
+         <th>District</th>
+
+         <th>State</th>
+
+         <th>Photo</th>
+
+
+
+    </tr>
+
+    <tr>
+        {% for i in data %}
+              <td>{{ i.username }}</td>
+              <td>{{ i.gender }}</td>
+              <td>{{ i.dob }}</td>
+              <td>{{ i.email }}</td>
+              <td>{{ i.phone }}</td>
+              <td>{{ i.place }}</td>
+              <td>{{ i.pin }}</td>
+              <td>{{ i.district }}</td>
+              <td>{{ i.state }}</td>
+         <td><img src="{{ i.photo }}" height="80px" width="80px"> </td>
+
+          <td><a href="/petcare/useredit/{{ i.LOGIN.id }}"><button class="btn-danger">Edit Profile</button> </a> </td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+</html>
+{% endblock %}

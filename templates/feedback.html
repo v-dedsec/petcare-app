@@ -1,0 +1,30 @@
+{% extends "user_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feedback</title>
+</head>
+<body>
+<table align="center">
+    <form style="text-align: center" action="/petcare/feedbackpost/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+       <td> <label for="date">name</label></td>
+           <td> <input type="date" name="date"></td>
+        </tr>
+
+        <td> <label for="feedback">Feedback</label></td>
+           <td> <input type="text" name="feedback"></td>
+        </tr>
+
+        <tr>
+    <td><input type="submit" value="Submit"></td>
+</tr>
+
+    </form>
+</table>
+</body>
+</html>
+{% endblock %}

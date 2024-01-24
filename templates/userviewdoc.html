@@ -1,0 +1,80 @@
+{% extends "user_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>User view DOC</title>
+</head>
+<body>
+<div style="overflow: auto">
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+
+        <th>Gender</th>
+
+        <th>Experience</th>
+
+        <th>Qualification</th>
+
+
+        <th>ClinicName</th>
+
+        <th>Email</th>
+
+        <th>Phone</th>
+
+         <th>Place</th>
+
+         <th>Pincode</th>
+
+         <th>District</th>
+
+         <th>State</th>
+
+         <th>Photo</th>
+
+        <th>Certificate</th>
+
+
+
+
+    </tr>
+
+    <tr>
+        {% for i in data %}
+              <td>{{ i.doctorname }}</td>
+              <td>{{ i.gender }}</td>
+              <td>{{ i.experience }}</td>
+            <td>{{ i.qualification }}</td>
+            <td>{{ i.clinicname }}</td>
+             <td>{{ i.email }}</td>
+              <td>{{ i.phone }}</td>
+              <td>{{ i.place }}</td>
+              <td>{{ i.pin }}</td>
+              <td>{{ i.district }}</td>
+              <td>{{ i.state }}</td>
+         <td><img src="{{ i.photo }}" height="80px" width="80px"> </td>
+           <td><a href="{{ i.certificate }}" download="">Download</a>
+
+
+{#               <iframe src="{{ i.certificate }}" width="80px" height="80px"></iframe>#}
+           </td>
+
+          <td><a href="/petcare/userviewshedule/{{ i.id }}"><button class="btn-success">Shedule</button></a> </td>
+            <td> <a href="/petcare/viewpresuser/{{ i.id }}"><button class="btn-primary">View Priscription</button></a> </td>
+
+
+
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "shop_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks</title>
+    <style>
+        body {
+            text-align: center;}
+    </style>
+</head>
+<body>
+<h1>Stocks</h1>
+
+        <form action="/petcare/stockpost/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="product">Products :</label>
+            <select name="product">
+                {% for i in data %}
+                <option value="{{ i.id }}">{{ i.productname }}</option>
+                {% endfor %}
+            </select><br>
+        <label for="stock">Stock :</label>
+        <input type="text" name="stock" required pattern="[0-9]+"><br>
+
+            <input type="submit" value="Update">
+        </form>
+
+</body>
+</html>
+{% endblock %}

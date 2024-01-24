@@ -1,0 +1,31 @@
+{% extends "shop_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <style>
+        body {
+            text-align: center;}
+    </style>
+</head>
+<body>
+<h1>Allocate orders</h1>
+
+        <form action="/petcare/allocatepst/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                     <input type="hidden" name="id" value="{{ id }}">
+
+            <label for="boy">Delivery Boy</label>
+            <select name="boy">
+                {% for i in data %}
+                <option value="{{ i.id }}">{{ i.name }}</option>
+                {% endfor %}
+            </select><br>
+            <input  type="submit" value="Allocate">
+        </form>
+
+</body>
+</html>
+{% endblock %}

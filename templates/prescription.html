@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prescripton</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table style="margin: 0 auto; text-align: left; width: 50%;">
+
+<form style="text-align: center" action="/petcare/prespost/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+
+    <tr>
+        <td><label for="pres">prescripton:</label></td>
+        <td> <input type="hidden" name="id" value="{{ id}}"></td>
+
+        <td><textarea name="pres"></textarea></td>
+    </tr>
+
+    <tr>
+        <td><input type="submit" value="Sent"></td>
+    </tr>
+</form>
+</table>
+</body>
+</html>

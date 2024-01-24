@@ -1,0 +1,30 @@
+{% extends "user_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Prescription</th>
+
+
+    </tr>
+    <tr>
+         {% for i in data %}
+              <td>{{ i.prescripton }}</td>
+
+
+
+        {% endfor %}
+    </tr>
+
+
+
+</table>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "user_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+
+     <style>
+        p{
+            text-align: center;
+            margin-left:30px;
+        }
+
+    </style>
+</head>
+<body>
+
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+
+        <th>Product</th>
+
+        <th>ProductImage</th>
+
+        <th>Discription</th>
+
+        <th>Quatity</th>
+        <th>Price</th>
+    </tr>
+
+<tr>
+
+      {% for i in data %}
+              <td>{{ i.Productname }}</td>
+          <td><img src="{{ i.productimage }}" height="80px" width="80px"> </td>
+
+          <td>{{ i.description }}</td>
+              <td>{{ i.quatity }}</td>
+          <td>{{ i.price }}</td>
+
+
+
+          <td><a href="/petcare/deletecart/{{ i.id }}"><button class="btn-Danger">Delete</button></a> </td>
+
+
+</tr>
+    {% endfor %}
+</table>
+<p>Total amount:{{ total }} </p>
+<button><a href="/petcare/payment/{{ total }}">buynow</a></button>
+
+</body>
+</html>
+{% endblock %}

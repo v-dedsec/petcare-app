@@ -1,0 +1,39 @@
+{% extends "delivery_index.html" %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delivery</title>
+
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+
+        <th>Email</th>
+
+        <th>Phone</th>
+
+        <th>Photo</th>
+    </tr>
+
+    <tr>
+        {% for i in data %}
+              <td>{{ i.name }}</td>
+              <td>{{ i.email }}</td>
+              <td>{{ i.phone }}</td>
+            <td><img src="{{ i.photo }}" height="80px" width="80px"> </td>
+
+
+
+    {% endfor %}
+
+
+</tr>
+</table>
+</body>
+</html>
+{% endblock %}

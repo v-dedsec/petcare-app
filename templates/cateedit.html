@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cate</title>
+</head>
+<body>
+<table align="center">
+    <form style="text-align: center" action="/petcare/cateedp/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+       <td> <label for="category">Category</label></td>
+            <td> <input type="hidden" name="id" value="{{ data.id}}"></td>
+
+
+           <td> <input type="text" name="category" value="{{ data.categoryname }}"></td>
+        </tr>
+
+    <tr><td><input type="submit" value="Done"></td></tr>
+    </form>
+</table>
+</body>
+</html>

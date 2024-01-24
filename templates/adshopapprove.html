@@ -1,0 +1,57 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approve</title>
+</head>
+<body>
+<h1 style="text-align: center">Approved Shop</h1>
+
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+
+        <th>LisenceNo</th>
+
+        <th>Email</th>
+
+        <th>Phone</th>
+
+         <th>Place</th>
+
+         <th>Pincode</th>
+
+         <th>District</th>
+
+         <th>State</th>
+
+        <th>Photo</th>
+
+        <th>Status</th>
+
+
+    </tr>
+
+    <tr>
+        {% for i in data %}
+              <td>{{ i.shopname }}</td>
+              <td>{{ i.licenceno }}</td>
+              <td>{{ i.email }}</td>
+              <td>{{ i.phone }}</td>
+              <td>{{ i.place }}</td>
+              <td>{{ i.pin }}</td>
+              <td>{{ i.district }}</td>
+              <td>{{ i.state }}</td>
+         <td><img src="{{ i.photo }}" height="80px" width="80px"> </td>
+            <td>{{ i.status }}</td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+</html>
+{% endblock %}

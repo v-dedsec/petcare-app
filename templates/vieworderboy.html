@@ -1,0 +1,42 @@
+{% extends "delivery_index.html" %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Delivery</title>
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+
+        <th>User</th>
+
+        <th>PhoneNo</th>
+
+        <th>Amount</th>
+
+        <th>Status</th>
+    </tr>
+    <tr>
+         {% for i in data %}
+              <td>{{ i.ORDER.date }}</td>
+              <td>{{ i.ORDER.USER.username }}</td>
+             <td>{{ i.ORDER.USER.phone }}</td>
+             <td>{{ i.ORDER.amount }}</td>
+              <td>{{ i.ORDER.status }}</td>
+
+             <td><a href="/petcare/delivery_ordered/{{ i.ORDER.id }}"><button class="btn-success">Deliverd</button></a> </td>
+
+
+        {% endfor %}
+    </tr>
+
+
+
+</table>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "shop_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table style="margin: 0 auto; text-align: left; width: 50%;">
+
+<form style="text-align: center" action="/petcare/productpost/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <tr>
+        <td><label for="cate">Choose Category</label></td>
+        <td>
+            <select name="cate">
+                {% for i in data1 %}
+                <option value="{{ i.id }}">{{ i.categoryname }}</option>
+                {% endfor %}
+            </select>
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td><label for="prod">Productname</label></td>
+        <td><input type="text" name="prod"></td>
+    </tr>
+
+    <tr>
+        <td><label for="photo">Photo</label></td>
+        <td><input type="file" name="photo"></td>
+    </tr>
+
+    <tr>
+        <td><label for="dis">Description</label></td>
+        <td><input type="text" name="dis"></td>
+    </tr>
+
+    <tr>
+        <td><label for="price">Price</label></td>
+        <td><input type="text" name="price"></td>
+    </tr>
+
+    <tr>
+        <td><input type="submit" value="Done"></td>
+    </tr>
+</form>
+</table>
+</body>
+</html>
+{% endblock %}

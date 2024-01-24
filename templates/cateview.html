@@ -1,0 +1,33 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>categoryview</title>
+</head>
+<body>
+
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>CategoryName</th>
+    </tr>
+
+
+    <tr>
+        {% for i in data %}
+              <td>{{ i.categoryname }}</td>
+
+
+          <td><a href="/petcare/cateedit/{{ i.id }}"><button class="btn-primary">Edit</button></a> </td>
+{#             <td><a href="/petcare//{{ i.LOGIN.id }}">Edit</a> </td>#}
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>
+{% endblock %}

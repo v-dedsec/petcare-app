@@ -1,0 +1,45 @@
+{% extends "shop_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User view</title>
+</head>
+<body>
+
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>category</th>
+
+        <th>product</th>
+
+        <th>dispription</th>
+
+        <th>price</th>
+
+        <th>image</th>
+
+
+
+
+    </tr>
+
+    <tr>
+        {% for i in data %}
+              <td>{{ i.CATEGORY.categoryname }}</td>
+              <td>{{ i.productname }}</td>
+              <td>{{ i.discription }}</td>
+              <td>{{ i.price }}</td>
+            <td><img src="{{ i.photo }}" height="80px" width="80px"> </td>
+
+          <td><a href="/petcare/producted/{{ i.id }}"><button class="btn-primary">Edit Product</button> </a> </td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+</html>
+{% endblock %}

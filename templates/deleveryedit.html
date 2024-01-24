@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>USER SIGN UP</title>
+</head>
+<body>
+<h1 style="text-align: center">delivery Sign Up</h1>
+<table align="center">
+    <form style="text-align: center" action="/petcare//" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+       <td> <label for="name">name</label></td>
+           <td> <input type="text" name="name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="photo">Photo</label></td>
+            <td><input type="file" name="photo"></td>
+        </tr>
+
+
+
+
+<tr>
+    <td><label for="email">Email</label></td>
+    <td><input type="email"  name="email"></td>
+</tr>
+
+<tr>
+    <td><label for="phone">Phone</label></td>
+    <td><input type="number"  name="phone"></td>
+</tr>
+
+<
+</tr>
+
+<tr>
+    <td><input type="submit" value="Done"></td>
+</tr>
+
+
+
+    </form>
+</table>
+</body>
+</html>

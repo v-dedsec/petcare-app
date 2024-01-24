@@ -1,0 +1,35 @@
+{% extends "shop_index.html" %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+
+        <th>Date</th>
+
+        <th>User</th>
+
+        <th>Amount</th>
+
+    </tr>
+
+    <tr>
+         {% for i in data %}
+              <td>{{ i.date }}</td>
+              <td>{{ i.USER.username }}</td>
+              <td>{{ i.amount }}</td>
+             <td><a href="/petcare/more/{{ i.id }}"><button class="btn-danger">More</button></a> </td>
+             <td><a href="/petcare/allocate/#aa{{ i.id }}"><button class="btn-primary">Allocate</button></a> </td>
+
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

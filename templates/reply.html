@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center">
+    <form style="text-align: center" action="/petcare/reply_post/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+            <input type="hidden" name="id" value="{{ data.id }}">
+
+
+       <td> <label for="reply">Reply</label></td>
+           <td> <input type="text" name="reply" value="{{ data.reply }}"></td>
+
+        </tr>
+        <tr>
+            <td><input type="submit" value="Sent"></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

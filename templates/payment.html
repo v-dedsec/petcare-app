@@ -1,0 +1,56 @@
+{% extends "user_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+</head>
+<body>
+<table align="center">
+    <form style="text-align: center" action="/petcare/paymentpost/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+            <td> <input type="hidden" name="total" value="{{ total }}"></td>
+
+
+
+       <td> <label for="accno">Account Number</label></td>
+
+           <td> <input type="text" name="accno"></td>
+
+        </tr>
+
+        <tr>
+         <td> <label for="accnme">Account Name</label></td>
+
+           <td> <input type="text" name="accnme"></td>
+
+        </tr>
+
+        <tr>
+         <td> <label for="ifsc">IFCS </label></td>
+
+           <td> <input type="text" name="ifsc"></td>
+
+        </tr>
+
+        <tr>
+         <td> <label for="cvv">CVV</label></td>
+
+           <td> <input type="text" name="cvv"></td>
+
+        </tr>
+
+
+
+
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+
+    </form>
+</table>
+</body>
+</html>
+{% endblock %}

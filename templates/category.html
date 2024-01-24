@@ -1,0 +1,29 @@
+{% extends "shop_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<h1 style="text-align: center">Category</h1>
+<table align="center">
+    <form style="text-align: center" action="/petcare/catepost/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+       <td> <label for="category">Category</label></td>
+           <td> <input type="text" name="category" required pattern="[A-Za-z]+"></td>
+
+
+
+        </tr>
+        <tr>
+            <td>  <input type="submit" value="Done"></td>
+        </tr>
+
+    </form>
+</table>
+</body>
+</html>
+{% endblock %}

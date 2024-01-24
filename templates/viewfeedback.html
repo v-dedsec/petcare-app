@@ -1,0 +1,26 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view feedback</title>
+</head>
+<body>
+<table align="center" border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+
+        <th>Feedback</th>
+    </tr>
+    <tr>
+        {% for i in data %}
+              <td>{{ i.date }}</td>
+              <td>{{ i.feedback }}</td>
+        {% endfor %}
+    </tr>
+</table>
+
+</body>
+</html>
+{% endblock %}

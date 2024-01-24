@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>course</title>
+</head>
+<body>
+
+<table align="center">
+<form style="text-align: center" action="/petcare/stockedit/" method="post">
+    {% csrf_token %}
+    <tr>
+        <td> <label for="product">Product</label></td>
+    <td><input type="hidden" name="id" value="{{ data.id }}"></td>
+      <td> <select name="product">
+
+          {% for i in data1 %}
+
+           <option value="{{ i.id }}" {% if i.id == data.PRODUCT.id %} selected
+           {% endif %}>{{ i.productname }}</option>
+          {% endfor %}
+
+       </select>
+
+    </tr>
+    <tr>
+        <td><label for="stock" >Stocks</label></td>
+        <td><input type="text" name="stock" value="{{ data.stock }}"></td>
+    </tr>
+
+
+<tr>
+    <td><input type="submit" class="btn btn-dark"></td>
+</tr>
+
+</form>
+
+</table>
+
+</body>
+</html>

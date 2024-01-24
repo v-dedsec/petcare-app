@@ -1,0 +1,29 @@
+{% extends "user_index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<body>
+<table align="center">
+    <form style="text-align: center" action="/petcare/cartpost/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tr>
+            <td> <input type="hidden" name="id" value="{{ data.id}}"></td>
+
+       <td> <label for="quantity">Qantity</label></td>
+
+           <td> <input type="text" name="quantity" required pattern="[0-9]+"></td>
+
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Done"></td>
+        </tr>
+
+    </form></table>
+</body>
+</html>
+{% endblock %}
